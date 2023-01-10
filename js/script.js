@@ -52,9 +52,17 @@ const app = Vue.createApp({
   methods: {
     goTo(target) {
       if (target === "next") {
-        this.currentIndex++;
+        if (this.currentIndex === pictures.length - 1) {
+          this.currentIndex = 0;
+        } else {
+          this.currentIndex++;
+        }
       } else {
-        this.currentIndex--;
+        if (this.currentIndex === 0) {
+          this.currentIndex = pictures.length - 1;
+        } else {
+          this.currentIndex--;
+        }
       }
     },
   },
