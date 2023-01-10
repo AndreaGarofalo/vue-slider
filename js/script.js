@@ -47,6 +47,7 @@ const app = Vue.createApp({
     return {
       currentIndex: 0,
       pictures,
+      slide: true,
     };
   },
   methods: {
@@ -66,14 +67,16 @@ const app = Vue.createApp({
       }
     },
     autoPlay() {
-      if (this.currentIndex === pictures.length - 1) {
-        this.currentIndex = 0;
-      } else {
-        this.currentIndex++;
+      if (this.slide === true) {
+        if (this.currentIndex === pictures.length - 1) {
+          this.currentIndex = 0;
+        } else {
+          this.currentIndex++;
+        }
       }
     },
   },
-  created: function () {
+  created() {
     setInterval(this.autoPlay, 3000);
   },
 });

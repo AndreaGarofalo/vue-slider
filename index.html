@@ -26,7 +26,7 @@
       id="root"
       class="container d-flex align-items-center justify-content-center"
     >
-      <div id="carousel">
+      <div id="carousel" @mouseover="slide = false" @mouseleave="slide = true">
         <div class="gallery">
           <figure v-for="(pic, i) in pictures" v-show="i === currentIndex">
             <img class="img-fluid" :src="pic.image" :alt="pic.title" />
