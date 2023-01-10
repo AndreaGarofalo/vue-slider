@@ -65,6 +65,16 @@ const app = Vue.createApp({
         }
       }
     },
+    autoPlay() {
+      if (this.currentIndex === pictures.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    },
+  },
+  created: function () {
+    setInterval(this.autoPlay, 3000);
   },
 });
 
