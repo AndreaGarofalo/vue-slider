@@ -45,6 +45,7 @@
             :src="pic.image"
             :alt="pic.title"
             :class="{'active': i === currentIndex}"
+            @click="currentIndex = i"
           />
         </div>
         <i
