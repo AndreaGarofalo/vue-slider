@@ -29,8 +29,8 @@
       <div id="carousel">
         <div class="gallery">
           <figure v-for="(pic, i) in pictures" v-show="i === currentIndex">
-            <img class="img-fluid active" :src="pic.image" :alt="pic.title" />
-            <figcaption class="text active">
+            <img class="img-fluid" :src="pic.image" :alt="pic.title" />
+            <figcaption class="text">
               <h2>{{ pic.title }}</h2>
               <p>{{ pic.text }}</p>
             </figcaption>
@@ -39,12 +39,8 @@
       </div>
       <div id="thumbnail">
         <div class="thumbnail-gallery">
-          <img
-            v-for="(pic, i) in pictures"
-            class="img-fluid active"
-            :src="pic.image"
-            :alt="pic.text"
-          />
+          <img v-for="(pic, i) in pictures" class="img-fluid" :src="pic.image"
+          :alt="pic.text" :class="{"active": i === currentIndex}" />
         </div>
         <i id="prev" class="fa-solid fa-circle-chevron-up"></i>
         <i id="next" class="fa-solid fa-circle-chevron-down"></i>
