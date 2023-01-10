@@ -39,11 +39,24 @@
       </div>
       <div id="thumbnail">
         <div class="thumbnail-gallery">
-          <img v-for="(pic, i) in pictures" class="img-fluid" :src="pic.image"
-          :alt="pic.text" :class="{"active": i === currentIndex}" />
+          <img
+            v-for="(pic, i) in pictures"
+            class="img-fluid"
+            :src="pic.image"
+            :alt="pic.titile"
+            :class="{'active': i === currentIndex}"
+          />
         </div>
-        <i id="prev" class="fa-solid fa-circle-chevron-up"></i>
-        <i id="next" class="fa-solid fa-circle-chevron-down"></i>
+        <i
+          id="prev"
+          class="fa-solid fa-circle-chevron-up"
+          @click="goTo('prev')"
+        ></i>
+        <i
+          id="next"
+          class="fa-solid fa-circle-chevron-down"
+          @click="goTo('next')"
+        ></i>
       </div>
     </div>
   </body>

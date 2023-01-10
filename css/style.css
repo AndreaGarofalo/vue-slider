@@ -60,9 +60,4 @@
   right: 0;
   text-align: end;
   padding: 5px 20px;
-  display: none;
-}
-
-.gallery .text.active {
-  display: block;
 }
